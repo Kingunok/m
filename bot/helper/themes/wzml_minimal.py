@@ -186,8 +186,8 @@ class WZMLStyle:
     ELAPSED =           '\n├<b>Elapsed:</b> {Elapsed}'
     ENGINE =            '\n├<b>Engine:</b> {Engine}'
     STA_MODE =          '\n├<b>Mode:</b> {Mode}'
-    SEEDERS =           '\n├<b>Seeders:</b> {Seeders} | '
-    LEECHERS =                                           '<b>Leechers:</b> {Leechers}'
+    SEEDERS =           '\n├<b>Seeders:</b> {Seeders}'
+    LEECHERS =          '\n<b>├Leechers:</b> {Leechers}'
 
     ####--------SEEDING----------
     SEED_SIZE =      '\n├<b>Size: </b>{Size}'
