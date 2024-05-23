@@ -2,19 +2,19 @@
 class WZMLStyle:
     # ----------------------
     # async def start(client, message) ---> __main__.py
-    ST_BN1_NAME = 'Repo'
-    ST_BN1_URL = 'https://www.github.com/weebzone/WZML-X'
+    ST_BN1_NAME = 'Master'
+    ST_BN1_URL = 'https://telegram.me/BalaPriyan'
     ST_BN2_NAME = 'Updates'
-    ST_BN2_URL = 'https://t.me/WZML_X'
-    ST_MSG = '''<i>This bot can mirror all your links|files|torrents to Google Drive or any rclone cloud or to telegram or to ddl servers.</i>
-<b>Type {help_command} to get a list of available commands</b>'''
+    ST_BN2_URL = 'https://t.me/BalapriyanBots'
+    ST_MSG = '''<i>Thanks For Using Balapriyan Bots Mirror And Leech Service.</i>
+<b>Use {help_command} to get a list of available commands</b>'''
     ST_BOTPM = '''<i>Now, This bot will send all your files and links here. Start Using ...</i>'''
-    ST_UNAUTH = '''<i>You Are not authorized user! Deploy your own WZML-X Mirror-Leech bot</i>'''
-    OWN_TOKEN_GENERATE = '''<b>Temporary Token is not yours!</b>\n\n<i>Kindly generate your own.</i>'''
-    USED_TOKEN = '''<b>Temporary Token already used!</b>\n\n<i>Kindly generate a new one.</i>'''
+    ST_UNAUTH = '''<i>You Are not authorized user! Conctact Balapriyan Bots Admin Or Use Free Group</i>'''
+    OWN_TOKEN_GENERATE = '''<b>Temporary Session Is Expired</b>\n\n<i>Kindly generate your own.</i>'''
+    USED_TOKEN = '''<b>Temporary Session Is already used!</b>\n\n<i>Kindly generate a new one.</i>'''
     LOGGED_PASSWORD = '''<b>Bot Already Logged In via Password</b>\n\n<i>No Need to Accept Temp Tokens.</i>'''
     ACTIVATE_BUTTON = 'Activate Temporary Token'
-    TOKEN_MSG = '''<b><u>Generated Temporary Login Token!</u></b>
+    TOKEN_MSG = '''<b><u>Generated Temporary Login Session!</u></b>
 <b>Temp Token:</b> <code>{token}</code>
 <b>Validity:</b> {validity}'''
     # ---------------------
@@ -40,22 +40,23 @@ class WZMLStyle:
     HELP_HEADER = "㊂ <b><i>Help Guide Menu!</i></b>\n\n<b>NOTE: <i>Click on any CMD to see more minor detalis.</i></b>"
 
     # async def stats(client, message):
-    BOT_STATS = '''⌬ <b><i>BOT STATISTICS :</i></b>
-┖ <b>Bot Uptime :</b> {bot_uptime}
+    BOT_STATS = '''<b><i>BOT STATISTICS :</i></b>
+└<b>Bot Uptime :</b> {bot_uptime}
 
-┎ <b><i>RAM ( MEMORY ) :</i></b>
-┃ {ram_bar} {ram}%
-┖ <b>U :</b> {ram_u} | <b>F :</b> {ram_f} | <b>T :</b> {ram_t}
 
+┌<b><i>BOT STATUS</i><b>
+└ <b><i>RAM ( MEMORY ) :</i></b>
+  ├[{ram_bar} {ram}%]
+  └<b>U :</b> {ram_u} | <b>F :</b> {ram_f} | <b>T :</b> {ram_t}
 ┎ <b><i>SWAP MEMORY :</i></b>
 ┃ {swap_bar} {swap}%
-┖ <b>U :</b> {swap_u} | <b>F :</b> {swap_f} | <b>T :</b> {swap_t}
+└<b>U :</b> {swap_u} | <b>F :</b> {swap_f} | <b>T :</b> {swap_t}
 
 ┎ <b><i>DISK :</i></b>
 ┃ {disk_bar} {disk}%
 ┃ <b>Total Disk Read :</b> {disk_read}
 ┃ <b>Total Disk Write :</b> {disk_write}
-┖ <b>U :</b> {disk_u} | <b>F :</b> {disk_f} | <b>T :</b> {disk_t}
+└<b>U :</b> {disk_u} | <b>F :</b> {disk_f} | <b>T :</b> {disk_t}
     
     '''
     SYS_STATS = '''⌬ <b><i>OS SYSTEM :</i></b>
