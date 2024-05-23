@@ -139,12 +139,12 @@ def handleIndex(index, dic):
 def get_progress_bar_string(pct):
     pct = float(str(pct).strip('%'))
     p = min(max(pct, 0), 100)
-    cFull = int(p // 8)
-    cPart = int(p % 8 - 1)
-    p_str = '■' * cFull
+    cFull = int(p // 2)
+    cPart = int(p % 2 - 1)
+    p_str = '⬢' * cFull
     if cPart >= 0:
-        p_str += ['▤', '▥', '▦', '▧', '▨', '▩', '■'][cPart]
-    p_str += '□' * (12 - cFull)
+        p_str += ['⏣', '⬢'][cPart]
+    p_str += '⬡' * (4 - cFull)
     return f"[{p_str}]"
 
 
@@ -186,18 +186,18 @@ class EngineStatus:
         if not (version_cache := bot_cache.get('eng_versions')):
             get_all_versions()
             version_cache = bot_cache.get('eng_versions')
-        self.STATUS_ARIA = f"Aria2 v{version_cache['aria']}"
-        self.STATUS_AIOHTTP = f"AioHttp {version_cache['aiohttp']}"
-        self.STATUS_GD = f"Google-API v{version_cache['gapi']}"
-        self.STATUS_MEGA = f"MegaSDK v{version_cache['mega']}"
-        self.STATUS_QB = f"qBit {version_cache['qbit']}"
-        self.STATUS_TG = f"PyroMulti v{version_cache['pyro']}"
-        self.STATUS_YT = f"yt-dlp v{version_cache['ytdlp']}"
-        self.STATUS_EXT = "pExtract v2"
-        self.STATUS_SPLIT_MERGE = f"ffmpeg v{version_cache['ffmpeg']}"
-        self.STATUS_ZIP = f"p7zip v{version_cache['p7zip']}"
-        self.STATUS_QUEUE = "Sleep v0"
-        self.STATUS_RCLONE = f"RClone {version_cache['rclone']}"
+        self.STATUS_ARIA = f"Aria2"
+        self.STATUS_AIOHTTP = f"AioHttp"
+        self.STATUS_GD = f"Google-API"
+        self.STATUS_MEGA = f"MegaSDK"
+        self.STATUS_QB = f"qBit"
+        self.STATUS_TG = f"Pyro"
+        self.STATUS_YT = f"yt-dlp"
+        self.STATUS_EXT = "pExtract"
+        self.STATUS_SPLIT_MERGE = f"ffmpeg"
+        self.STATUS_ZIP = f"p7zip"
+        self.STATUS_QUEUE = "Sleep"
+        self.STATUS_RCLONE = f"RClone"
 
 
 def get_readable_message():
@@ -215,6 +215,7 @@ def get_readable_message():
         elapsed = time() - download.message.date.timestamp()
         msg += BotTheme('STATUS_NAME', Name="Task is being Processed!" if config_dict['SAFE_MODE'] and elapsed >= config_dict['STATUS_UPDATE_INTERVAL'] else escape(f'{download.name()}'))
         if download.status() not in [MirrorStatus.STATUS_SPLITTING, MirrorStatus.STATUS_SEEDING]:
+            msg += BotTheme('STATUS', Status=download.status(), Url=msg_link)
             msg += BotTheme('BAR', Bar=f"{get_progress_bar_string(download.progress())} {download.progress()}")
             msg += BotTheme('PROCESSED', Processed=f"{download.processed_bytes()} of {download.size()}")
             msg += BotTheme('STATUS', Status=download.status(), Url=msg_link)
