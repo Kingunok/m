@@ -144,7 +144,7 @@ def get_progress_bar_string(pct):
     p_str = '⬢' * cFull
     if cPart >= 0:
         p_str += ['⏣', '⬢'][cPart]
-    p_str += '⬡' * (4 - cFull)
+    p_str += '⬡' * (8 - cFull)
     return f"[{p_str}]"
 
 
@@ -218,7 +218,6 @@ def get_readable_message():
             msg += BotTheme('STATUS', Status=download.status(), Url=msg_link)
             msg += BotTheme('BAR', Bar=f"{get_progress_bar_string(download.progress())} {download.progress()}")
             msg += BotTheme('PROCESSED', Processed=f"{download.processed_bytes()} of {download.size()}")
-            msg += BotTheme('STATUS', Status=download.status(), Url=msg_link)
             msg += BotTheme('ETA', Eta=download.eta())
             msg += BotTheme('SPEED', Speed=download.speed())
             msg += BotTheme('ELAPSED', Elapsed=get_readable_time(elapsed))
